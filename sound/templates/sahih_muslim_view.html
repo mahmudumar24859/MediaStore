@@ -1,0 +1,28 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<div class="content container-fluid">
+    <h3 class="page-title" style="text-align: center; font-weight: bolder;">Welcome to Our Sahih Muslim Master Page</h3>
+    <p style="text-align: center;">By Sheikh Abdulwahab Abdallah (Imam Ahlussunnah Waljama'a)</p>
+  <div class="row">
+    {% for i in sahih_muslim %}
+      <div class="col-md-12 col-lg-6">
+          <div class="card card-chart">
+              <div class="card-header">
+                  <div class="row align-items-center">
+                      <div class="col-12">
+                          <h5 class="card-title"><strong>{{ i.title }}</strong></h5><br>
+                          <p>{{ i.artist }}</p>
+                      </div>
+                  </div>
+              </div>
+              <div style="background-color: whitesmoke;" class="card-body">
+                <audio style="object-fit: cover; width: 90%; "controls>
+                  <source style="outline: none;" src="{{i.audio_file.url}}" type="audio/mp3" autoplay loop>
+                </audio>
+              </div>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

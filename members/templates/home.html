@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}
+  Home Page
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-lg-4 my-4">
+      <div class="card shadow"><br>
+          <img src="{{post.image.url}}" class="card-img-top" alt="post image not available" height="250px" width="450px">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;"><strong>{{post.title|title}}</strong></h5>
+            <p class="card-text" style="text-align: center;">{{post.content| truncatechars:180}}</p>
+            <p style="text-align: center;"><a href="" class="btn btn-primary">Read More</a></p>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+      <div class="col-lg-6" style="padding-left: 10px; margin: auto; text-align: justify; text-justify: inter-word; line-height: 1.5;">
+        <h4><b>Welcome Address</b></h4>
+        <h5 >Assalamu Alaikum Warahmatullah, We Welcome all the muslim brothers and sisters visiting this blessed site,
+          we pray for Almighty Allah to blessed every one of us here and to grant us His Aljannatul Firdaus, Amin.
+          Thanks Yours: Sheikh Abdulwahab Abdallah (Imamu Ahlussunnah Wal-Jama'a).
+        </h5><br>
+        <h4><b>Sakon Maraba</b></h4>
+        <h5>Assalamu Alaikum Warahmatullah, 'yan uwa masoya manzan Allah (SAW) muna yi miku barka da zuwa wannan shafi namu
+          mai albarka, munayiwa kowa da kowa fatan alheri, Allah ya bamu nasara a rayuwa duniya da lahira, Iyayenmu Allah yayi musu rahama
+          ya albarkacesu a duniya da lahira.Manufar bude wannan shafi shine da farko neman yardar Allah ta hanyar ilmantar da al’umma addininsu 
+          da rayuwarsu, da zamantakewarsu da zaman lafiya tare da yimuku fatan alheri duniya da lahira. A takaice wannan shafi ya kunshi bangarori guda uku: <br> <br>
+          <a style="color: blue; text-decoration: none;" href="{% url 'home' %}">Bangare na Farko</a> -	Bangaren al’amuran yau da kullum.  <br><br>
+          <a style="color: blue; text-decoration: none;" href="{% url 'Home' %}">Bangare na Biyu</a> -	Bangaren Taskar karatun malam, ta yadda kuna da damar saurare online da kuma damar saukewa zuwa wayoyinku, ko computer. <br> <br>
+          <a style="color: blue; text-decoration: none;" href="{% url 'blogs' %}">Bangare na Uku</a> -	Bangaren wallafa rubutu (blog), ta yadda ko wannenku yana da damar wallafa wani rubutu ko kuma karanta rubutun da waninsa yayi. <br><br> Duka dai don neman yardar Allah (SWT).
+           Mungode Sheikh Abdulwahab Abdallah 
+          (Imamu Ahlussunnah Wal-Jama'a).
+        </h5>
+      </div>
+    </div>
+    <hr><br>
+  </div>
+  <div class="container">
+    <div class="row" style="line-height: 2; text-align: justify;">
+      <div class="col-lg-4">
+        <h3 style="text-align: center;">Sakon Maraba (Fulfulde)</h3>
+        <p>Assalamu Alaikum Warahmatullah, 'yan uwa masoya manzan Allah (SAW) muna yi miku barka da zuwa wannan shafi namu
+          mai albarka, munayiwa kowa da kowa fatan alheri, Allah ya bamu nasara a rayuwa duniya da lahira, Iyayenmu Allah yayi musu rahama
+          ya albarkacesu a duniya da lahira. Mungode Sheikh Abdulwahab Abdallah (Imamu Ahlussunnah Wal-Jama'a).</p>
+      </div>
+      <div class="col-lg-4">
+        <h3 style="text-align: center;">Sakon Maraba (French)</h3>
+        <p class="t2">Assalamu Alaikum Warahmatullah, 'yan uwa masoya manzan Allah (SAW) muna yi miku barka da zuwa wannan shafi namu
+          mai albarka, munayiwa kowa da kowa fatan alheri, Allah ya bamu nasara a rayuwa duniya da lahira, Iyayen Allah yayi musu rahama
+          ya albarkacesu a duniya da lahira. Mungode Sheikh Abdulwahab Abdallah (Imamu Ahlussunnah Wal-Jama'a).</p>
+      </div>
+      <div class="col-lg-4">
+        <h3 style="text-align: center;">مرحبا بكم</h3>
+        <p style="text-align: right;" lang="Ar" >السلام عليكم ورحمة الله وبركته، نتمى لكم الخير ونسؤله سبحانه أن يدخلنا فسيه جنانه جميعا، إنه ولي ذلك
+          والقادر عليه. من فضيلة الشيخ عبد الوهاب عبد الله إمام أهل السنة والجماع، جمهورية نيجيريا
+        </p>
+      </div>
+    </div>
+    <hr><br>
+    <div class="touch" style="background-color: #E4F9F5;">
+      <br><h3 style="text-align: center;">Get in Touch
+    <br><br><a href="" class="btn btn-primary">Get in Touch</a></h3><br>
+    </div>
+  </div>
+ 
+{% endblock %}

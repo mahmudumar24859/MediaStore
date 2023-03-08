@@ -1,0 +1,17 @@
+{% extends 'blog_base.html' %}
+{% block title %} Delete Blog Post {% endblock %}
+{% block content %}
+<form enctype="multipart/form-data" method="POST"> {% csrf_token %}
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Are you sure you want to delete this blog?</h5>
+              <form action="/delete_blog_post/{{posts.id}}" method="POST">				
+                {% csrf_token %}
+              <a href="{% url 'blog' %}" class="btn btn-success">Cancel</a>
+              <button class="btn btn-danger">Delete Blog</button>
+            </div>
+          </div>
+    </div>
+    </form>
+{% endblock %}

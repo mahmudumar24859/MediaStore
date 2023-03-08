@@ -1,0 +1,14 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+    <div class="contain">
+        <div class="col-md-12">
+            <div class="card card-body">
+                <form action="{% url 'Sahih_Muslim_Upload' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button class="btn btn-primary" type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
